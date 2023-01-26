@@ -59,9 +59,22 @@
 
                     @endif
                     @if ($user->role_id == 2)
-                        <x-input id="role_id"
+                    <x-input id="role_id"
                         type="text"
                         name="role_id" hidden="true" value="3" />
+                        <x-label for="klasnaam" value="Klas naam" />
+                        <x-input id="klasnaam"
+                        type="text"
+                        name="klasnaam" />
+                    @endif
+                    @if ($user->role_id == 3)
+                    <x-input id="role_id"
+                        type="text"
+                        name="role_id" hidden="true" value="4" />
+                        <x-label for="leerlingnaam" value="leerling naam" />
+                        <x-input id="leerlingnaam"
+                        type="text"
+                        name="leerlingnaam" />
                     @endif
                 @endif
             @endforeach

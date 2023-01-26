@@ -28,10 +28,13 @@ class RemoveController extends Controller
         if ($_POST['value'] == 'user') {
             DB::table('users')->where('id', $id)->delete();
             return redirect('/dashboard');
-        } else {
+        } elseif (isset($_POST['school_id'])) {
             $school_id = $_POST['school_id'];
             DB::table('users')->where('school_id', $school_id)->delete();
             DB::table('schools')->where('id', $id)->delete();
+            return redirect('/dashboard');
+        } else {
+            DB::table('users')->where('id', $id)->delete();
             return redirect('/dashboard');
         }
     }
